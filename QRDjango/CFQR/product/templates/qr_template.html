@@ -1,0 +1,246 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CF Product QR Page</title>
+</head>
+<style>
+ {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/*header**/
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+header {
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 70px;
+  padding-top: 10px;
+}
+
+header h1 {
+  padding: 4px;
+  float: left;
+  font-size: 1.6em;
+  margin-top: 7px;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 7px;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+header li {
+  justify-content: space-around;
+  margin-top: 9px;
+  display: inline;
+  padding: 0 15px 0 15px;
+}
+
+header a:hover {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+/**logo**/
+.logo {
+    float: left;
+    width: auto;
+    max-height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*footer*/
+
+#footer {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  padding: 25px;
+}
+
+.footer-container {
+  display: flex;
+  margin: 1% 10% 0% 10%;
+}
+
+/** main product page **/
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media all and (min-width: 400px) {
+  .main    { flex: 1 0px; }
+  .aside { flex: 1 0 0; }
+  padding: 10px;
+}
+
+
+/**Table**/
+.table-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-row {
+    display: flex;
+  flex:0.1 100%;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.table-cell {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+.table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+</style>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs((slideIndex += n));
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = x.length;
+  }
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex - 1].style.display = "block";
+}
+
+</script>
+<body>
+  <header>
+    <div class="container">
+      <img class="logo" src="https://f48-zpg-r.zdn.vn/6366363872009038751/99146bdd70a9a6f7ffb8.jpg">
+      <div id="branding">
+        
+
+        <h1>Connect Fashion</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Company</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrapper">
+  <article class="main">
+                <div>
+              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+              <div class="w3-content w3-display-container">
+                <img class="mySlides" src="https://www.w3schools.com/w3css/img_snowtops.jpg" style="width:100%">
+                <img class="mySlides" src="https://www.w3schools.com/howto/img_lights.jpg" style="width:100%">
+                <img class="mySlides" src="https://www.w3schools.com/howto/img_mountains.jpg" style="width:100%">
+                <img class="mySlides" src="https://www.w3schools.com/howto/img_forest.jpg" style="width:100%">
+
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+              </div>
+
+            </div> 
+  </article>
+  <aside class="aside aside-2">
+    <h1>Vải Gai</h1>
+    <div class="table-container">
+        <div class="table-row">
+            <div class="table-cell">Mã sản phẩm</div>
+            <div class="table-cell">YPMV23-01600</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Thành phần</div>
+            <div class="table-cell">COTTON:72% RAMIE:28%</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Kiểu dệt</div>
+            <div class="table-cell">YD POPLIN</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Cấu Trúc</div>
+            <div class="table-cell">CM40*CZB21 100*55</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Trọng lượng</div>
+            <div class="table-cell">124g/m2</div>
+        </div>
+    </div>
+    
+  </aside>
+</div>
+
+  <footer>
+    <div id="footer">
+      <div class="footer-container">
+        <div class="footer">
+          <h4>Explore the Docs</h4>
+          <p>Mauris metus eros, Nullam enim sapien, maximus sed mi nec.</p>
+        </div>
+        <div class="footer">
+          <h4>Explore the Docs</h4>
+          <p>Mauris metus eros, Nullam enim sapien, maximus sed mi nec.</p>
+        </div>
+        <div class="footer">
+          <h4>Explore the Docs</h4>
+          <p>Mauris metus eros, Nullam enim sapien, maximus sed mi nec.</p>
+        </div>
+        <div class="footer">
+          <h4>Explore the Docs</h4>
+          <p>Mauris metus eros, Nullam enim sapien, maximus sed mi nec.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <footer>
+    <div id="footer2"></div>
+  </footer>
+</body>
+
+</html>
