@@ -18,7 +18,7 @@ body {
 
 
 header {
-  background-color: #000000;
+  background-color: #1B365D;
   color: #ffffff;
   min-height: 70px;
   padding-top: 10px;
@@ -69,7 +69,7 @@ header a:hover {
 /*footer*/
 
 #footer {
-  background-color: #1b1b1b;
+  background-color: #1B365D;
   color: #ffffff;
   padding: 25px;
 }
@@ -87,13 +87,56 @@ header a:hover {
   text-align: center;
 }
 
+.mySlides{
+    height:100%;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    display:none;
+}
 @media all and (min-width: 800px) {
   .main    { flex: 1 0px; }
   .aside { flex: 1 0 0; }
   padding: 10px;
 }
+/**buttonSlide**/
+.w3-display-right {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%,-50%);
+}
+.w3-display-left {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%,-50%);
+}
+.w3-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    color: #fff!important;
+    background-color: #000!important;
+    font: inherit;
+}
+.w3-display-container {
+    position: relative;
+}
+html {
+    overflow-x: hidden;
+    box-sizing: border-box;
 
-
+}
+html, body {
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 /**Table**/
 .table-container {
     display: flex;
@@ -105,6 +148,7 @@ header a:hover {
   flex:0.1 100%;
     width: 100%;
     border: 1px solid #ccc;
+
 }
 
 .table-cell {
@@ -112,6 +156,7 @@ header a:hover {
     padding: 10px;
     box-sizing: border-box;
     font-weight: normal;
+    text-color:red;
 }
 
 .table-header {

@@ -4,7 +4,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CF Product QR Page</title>
+  <title>Connect Fashion</title>
+    <link rel="icon" href="{% static 'logo-yeallow.png' %}">
 </head>
 <link rel="stylesheet" href="{% static 'product.css' %}">
 <script>
@@ -27,14 +28,14 @@ function showDivs(n) {
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  x[slideIndex - 1].style.display = "block";
+  x[slideIndex - 1].style.display = "flex";
 }
 
 </script>
 <body>
   <header>
     <div class="container">
-      <img class="logo" src="https://f48-zpg-r.zdn.vn/6366363872009038751/99146bdd70a9a6f7ffb8.jpg">
+      <img class="logo" src="{% static 'logo-yeallow.png' %}">
       <div id="branding">
         
 
@@ -42,9 +43,9 @@ function showDivs(n) {
       </div>
       <nav>
         <ul>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Company</a></li>
+          <li><a href="#">Sản phẩm</a></li>
+          <li><a href="#">Chứng nhận</a></li>
+          <li><a href="#">Về chúng tôi</a></li>
         </ul>
       </nav>
     </div>
@@ -53,13 +54,13 @@ function showDivs(n) {
   <div class="wrapper">
   <article class="main">
                 <div>
-                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-              <div class="w3-content w3-display-container">
-                <img class="mySlides" src="{% static '1.jpg' %}" style="width:100%">
-                <img class="mySlides" src="{% static '2.jpg' %}" style="width:100%;display:none">
-                <img class="mySlides" src="{% static '3.jpg' %}" style="width:100%;display:none">
-                <img class="mySlides" src="{% static 'qr.png' %}" style="width:100%;display:none">
 
+              <div class="w3-content w3-display-container">
+                <img class="mySlides" src="{% static '1.jpg' %}" style="display:flex">
+                <img class="mySlides" src="{% static '2.jpg' %}" >
+                <img class="mySlides" src="{% static '3.jpg' %}" >
+                <img class="mySlides" src="{% static 'qr.png' %}" >
+                <img class="mySlides" src="{% static 't.jpg' %}" >
                 <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                 <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
               </div>
