@@ -68,40 +68,14 @@ function showDivs(n) {
             </div> 
   </article>
   <aside class="aside aside-2">
-    <h1>Tranh Gai</h1>
+    <h1>{{name}}</h1>
     <div class="table-container">
+        {% for field in qr_detail %}
         <div class="table-row">
-            <div class="table-cell">Mã sản phẩm</div>
-            <div class="table-cell">YPMV23-01600</div>
+            <div class="table-cell">{{field.key}}</div>
+            <div class="table-cell">{{field.value}}</div>
         </div>
-        <div class="table-row">
-            <div class="table-cell">Thành phần</div>
-            <div class="table-cell">COTTON:2% RAMIE:98%</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">Kiểu dệt</div>
-            <div class="table-cell">YD POPLIN</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">Kích Thước</div>
-            <div class="table-cell">100cm*55cm</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">Trọng lượng</div>
-            <div class="table-cell">2kg</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">Tác giả</div>
-            <div class="table-cell">Tô Ngọc Vân Vân</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">Đơn vị sở hữu</div>
-            <div class="table-cell">CTCPCK XYZ</div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">Mã QR</div>
-            <div class="table-cell">{{qrid}}</div>
-        </div>
+        {% endfor %}
     </div>
     
   </aside>
