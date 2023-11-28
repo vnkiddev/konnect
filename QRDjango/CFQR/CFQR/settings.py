@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'CFQR.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'qrkonnect',
+        'PASSWORD':'Connect2023!',
+        'USER':'konnect',
+        'HOST':'localhost',
+        'PORT':'',
     }
 }
 
