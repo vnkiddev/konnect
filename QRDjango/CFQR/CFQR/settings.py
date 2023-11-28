@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'qrkonnect',
         'PASSWORD':'Connect2023!',
         'USER':'konnect',
-        'HOST':'localhost',
+        'HOST':'103.173.226.72',
         'PORT':'',
     }
 }

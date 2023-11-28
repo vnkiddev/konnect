@@ -71,5 +71,21 @@ def qr_detail(qr_id):
         for i in range(1,len(data[0])):
             result.append({"key":data[0][i],"value":data[1][i]})
         return result
+
+def sheet_names():
+    sheet_list = service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute().get('sheets')
+    result = []
+    for asheet in sheet_list:
+        result.append(asheet['properties']['title'])
+    return result
+
+def sheet_values(sheet_name):
+    values = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=sheet_name).execute().get('values')
+    standard_len = len(values[0])
+    for i in values[1:]:
+        if len(i) < standard_len:
+            i.extend([""] * (standard_len - len(i)))
+    return values
+
 if __name__ == "__main__":
     print(qr_detail("trye"))
