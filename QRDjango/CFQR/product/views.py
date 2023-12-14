@@ -1,7 +1,9 @@
-from django.http import HttpResponse
+from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
+from django.shortcuts import render, redirect
 import gapi
-from .models import QR
+
 import dapi
 # Create your views here.
 
@@ -9,8 +11,13 @@ import dapi
 def product_qr(request):
     template = loader.get_template('qr_template.html')
     qr_id = request.path.split('/')[-1]
+    qr_id = qr_id.split('?')[0]
+    if qr_id == 'favicon.ico':
+        return HttpResponseRedirect('/static/favicon.ico')
+    elif qr_id == "":
+        return redirect("http://connectfashion.com.vn")
     qr_detail = dapi.qr_detail(qr_id)
-    context = {"name":qr_detail[0]['value'],"qr_detail":qr_detail[1:]}
+    context = {"name":qr_detail[1]['value'],"qr_detail":qr_detail[2:]}
     return HttpResponse(template.render(context,request))
 
 def qr_list(request):
@@ -33,3 +40,16 @@ def migrate(requests):
     sheetvalues.insert(0,['qrid','qtype','status'])
     dapi.migrate_table(sheetvalues, 'QR',True)
     return HttpResponse('migration done')
+
+
+def product_image(request):
+    template = loader.get_template('upload_img.html')
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save('product   b/static/'+ myfile.name, myfile)
+        uploaded_file_url = 'static/'+myfile.name
+        return HttpResponse(template.render({
+            'uploaded_file_url': uploaded_file_url
+        },request))
+    return HttpResponse(template.render({},request))
