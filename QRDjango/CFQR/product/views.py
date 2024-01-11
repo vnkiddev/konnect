@@ -2,7 +2,7 @@ from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render, redirect
-import gapi
+import gapi,os
 
 import dapi
 # Create your views here.
@@ -17,7 +17,11 @@ def product_qr(request):
     elif qr_id == "":
         return redirect("http://connectfashion.com.vn")
     qr_detail = dapi.qr_detail(qr_id)
-    context = {"name":qr_detail[1]['value'],"qr_detail":qr_detail[2:]}
+    img_list = [filename for filename in os.listdir('product/static') if (filename == qr_id+".jpg" or filename.startswith(qr_id+"-"))]
+    common = ["/rami/"+filename for filename in os.listdir('product/static/rami')]
+    img_list.extend(common)
+    print(img_list)
+    context = {"name":qr_detail[1]['value'],"qr_detail":qr_detail[2:], "fistimg":img_list[0],"imglist":img_list[1:]}
     return HttpResponse(template.render(context,request))
 
 def qr_list(request):

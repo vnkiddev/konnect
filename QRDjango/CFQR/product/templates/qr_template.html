@@ -53,11 +53,11 @@ function showDivs(n) {
                 <div>
 
               <div class="w3-content w3-display-container">
-                <img class="mySlides" src="{% static '1.jpg' %}" style="display:flex">
-                <img class="mySlides" src="{% static '2.jpg' %}" >
-                <img class="mySlides" src="{% static '3.jpg' %}" >
-                <img class="mySlides" src="{% static 'qr.png' %}" >
-                <img class="mySlides" src="{% static 't.jpg' %}" >
+                <img class="mySlides" src="{% static fistimg %}" style="display:flex">
+                {% for imgname in imglist %}
+                <img class="mySlides" src="{% static imgname %}" >
+                {% endfor %}
+
                 <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                 <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
               </div>
